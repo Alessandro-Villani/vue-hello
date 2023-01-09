@@ -6,13 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- BOOTSTRAP -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css' integrity='sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==' crossorigin='anonymous'/>
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="css/style.css">
     <!-- VUE -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- TITLE -->
     <title>Hello Vue</title>
 </head>
 <body>
-    
+    <div id="root">
+        <div class="container">
+            <div class="row text-center mt-5">
+                <div class="col-12">
+                    <div class="cs-card mx-auto p-3 bg-secondary text-white">
+                        <h1 class="mb-3">{{  firstName  }} {{ lastName }}</h1>
+                        <img :src="picture" :alt="lastName" class="mb-3 rounded-2">
+                        <p>{{ description  }}</p>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
     <!-- JAVASCRIPT -->
     <script src="js/script.js"></script>
 </body>
