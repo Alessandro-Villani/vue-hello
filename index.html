@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- BOOTSTRAP -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css' integrity='sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==' crossorigin='anonymous'/>
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="css/style.css">
     <!-- VUE -->
@@ -16,14 +20,35 @@
 <body>
     <div id="root">
         <div class="container">
-            <div class="row text-center mt-5">
+            <div class="row text-center mt-5 mb-5">
                 <div class="col-12">
                     <div class="cs-card mx-auto p-3 bg-secondary text-white">
                         <h1 class="mb-3">{{  firstName  }} {{ lastName }}</h1>
-                        <img :src="picture" :alt="lastName" class="mb-3 rounded-2">
-                        <p>{{ description  }}</p>
+                        <img :src="picture" :alt="lastName" class="mb-3 rounded-2 img-fluid">
+                        <p class="h5">{{ description  }}</p>
                     </div>
                 </div>  
+            </div>
+            <div class="row text-center g-3">
+                <div class="col-12">
+                    <h1>MODIFICA LA CARD</h1>
+                </div>
+                <div class="col-3 offset-3 d-flex flex-column align-items-center">
+                    <label for="name" class="fw-bold">NOME</label>
+                    <input type="text" v-model="firstName" id="name" class="text-center">
+                </div>
+                <div class="col-3 d-flex flex-column align-items-center">
+                    <label for="surname" class="fw-bold">COGNOME</label>
+                    <input type="text" v-model="lastName" id="surname" class="text-center">
+                </div>
+                <div class="col-6 offset-3 d-flex flex-column align-items-center">
+                    <label for="picture" class="fw-bold">IMG URL</label>
+                    <input type="url" v-model="picture" id="picture" class="text-center w-50">
+                </div>
+                <div class="col-6 offset-3 d-flex flex-column align-items-center">
+                    <label for="description" class="fw-bold">DESCRIZIONE</label>
+                    <textarea name="description" id="description" cols="30" rows="10" v-model="description" class="w-50"></textarea>
+                </div>
             </div>
         </div>
     </div>
